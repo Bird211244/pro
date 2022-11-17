@@ -10,7 +10,7 @@ st.image('./pic/welcome.jpg')
 
 html_8="""
 <div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
-<center><h5>การทำนายข้อมูลคุณภาพนม</h5></center>
+<center><h5>การทำนายข้อมูลขนาดเท้า</h5></center>
 </div>
 """
 
