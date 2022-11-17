@@ -17,11 +17,11 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/Covid.csv")
+dt=pd.read_csv("./data/football.csv")
 st.write(dt.head(10))
 
-data1 = dt['sex'].sum()
-data2 = dt['pneumonia'].sum()
+data1 = dt['size'].sum()
+data2 = dt['cm'].sum()
 
 import streamlit as st
 import pandas as pd
@@ -42,11 +42,11 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/Covid.csv")
+dt=pd.read_csv("./data/football.csv")
 st.write(dt.head(10))
 
-data1 = dt['sex'].sum()
-data2 = dt['pneumonia'].sum()
+data1 = dt['size'].sum()
+data2 = dt['cm'].sum()
 
 
 dx=[data1,data2]
@@ -66,13 +66,13 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-sex=st.number_input("กรุณาเลือกข้อมูล pH")
-pn=st.slider("กรุณาเลือกข้อมูล pneumonia")
+size=st.number_input("กรุณาเลือกข้อมูล size")
+cm=st.slider("กรุณาเลือกข้อมูล cm")
 
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/covid_model.sav', 'rb'))
-   input_data =  (sex,pn)
+   loaded_model = pickle.load(open('./data/ball_model.sav', 'rb'))
+   input_data =  (size,cm)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
    # reshape the array as we are predicting for one instance
@@ -106,12 +106,12 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-sex=st.number_input("กรุณาเลือกข้อมูล pH")
-pn=st.slider("กรุณาเลือกข้อมูล pneumonia")
+size=st.number_input("กรุณาเลือกข้อมูล size")
+cm=st.slider("กรุณาเลือกข้อมูล cm")
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/coivd_model.sav', 'rb'))
-   input_data =  (sex,pn)
+   loaded_model = pickle.load(open('./data/ball_model.sav', 'rb'))
+   input_data =  (size,cm)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
    # reshape the array as we are predicting for one instance
