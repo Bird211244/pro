@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pickle
 
-st.image('./pic/welcome.jpg')
+st.image('./pro/welcome.jpg')
 
 html_8="""
 <div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
@@ -46,18 +46,18 @@ pn=st.slider("กรุณาเลือกข้อมูล pneumonia")
 
 
 if st.button("ทำนายผล"):
-    loaded_model = pickle.load(open('./data/covid_model.sav', 'rb'))
+    loaded_model = pickle.load(open('./pro/covid_model.sav', 'rb'))
     input_data =  (pn,S)
     input_data_as_numpy_array = np.asarray(input_data)
     input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
     prediction = loaded_model.predict(input_data_reshaped)
     st.write(prediction)
     if prediction == 'Versicolor':
-        st.image('./pic/versicolor.jpg')
+        st.image('./pro/versicolor.jpg')
     elif prediction == 'Setosa':
-        st.image('./pic/setosa.jpg')
+        st.image('./pro/setosa.jpg')
     else:
-        st.image('./pic/virginica.jpg')
+        st.image('./pro/virginica.jpg')
 
     st.button("ไม่แสดงข้อมูล")
 else:
