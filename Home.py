@@ -57,11 +57,11 @@ if st.button("ทำนายผล"):
    prediction = loaded_model.predict(input_data_reshaped)
    st.write(prediction)
    if prediction == 'low':
-        st.image('./pic/virginica.jpg')
+        st.image('./pic/foot.jpg')
    elif prediction == 'medium':
-        st.image('./pic/versicolor.jpg')
+        st.image('./pic/foot.jpg')
    else:
-        st.image('./pic/setosa.jpg')
+        st.image('./pic/foot.jpg')
    st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
