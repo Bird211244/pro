@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pickle
 
-st.image('./pic/covid.jpg')
+st.image('./pro/covid.jpg')
 
 html_8="""
 <div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
@@ -17,7 +17,7 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/football.csv")
+dt=pd.read_csv("./pro/football.csv")
 st.write(dt.head(10))
 
 data1 = dt['size'].sum()
@@ -31,7 +31,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pickle
 
-st.image('./pic/covid.jpg')
+st.image('./pro/covid.jpg')
 
 html_8="""
 <div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
@@ -42,7 +42,7 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/football.csv")
+dt=pd.read_csv("./pro/football.csv")
 st.write(dt.head(10))
 
 data1 = dt['size'].sum()
@@ -71,7 +71,7 @@ cm=st.slider("กรุณาเลือกข้อมูล cm")
 
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/ball_model.sav', 'rb'))
+   loaded_model = pickle.load(open('./pro/ball_model.sav', 'rb'))
    input_data =  (size,cm)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
@@ -80,11 +80,11 @@ if st.button("ทำนายผล"):
    prediction = loaded_model.predict(input_data_reshaped)
    st.write(prediction)
    if prediction == 'low':
-        st.image('./pic/virginica.jpg')
+        st.image('./pro/virginica.jpg')
    elif prediction == 'medium':
-        st.image('./pic/versicolor.jpg')
+        st.image('./pro/versicolor.jpg')
    else:
-        st.image('./pic/setosa.jpg')
+        st.image('./pro/setosa.jpg')
    st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
@@ -110,7 +110,7 @@ size=st.number_input("กรุณาเลือกข้อมูล size")
 cm=st.slider("กรุณาเลือกข้อมูล cm")
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/ball_model.sav', 'rb'))
+   loaded_model = pickle.load(open('./pro/ball_model.sav', 'rb'))
    input_data =  (size,cm)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
@@ -119,11 +119,11 @@ if st.button("ทำนายผล"):
    prediction = loaded_model.predict(input_data_reshaped)
    st.write(prediction)
    if prediction == 'low':
-        st.image('./pic/virginica.jpg')
+        st.image('./pro/virginica.jpg')
    elif prediction == 'medium':
-        st.image('./pic/versicolor.jpg')
+        st.image('./pro/versicolor.jpg')
    else:
-        st.image('./pic/setosa.jpg')
+        st.image('./pro/setosa.jpg')
    st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
