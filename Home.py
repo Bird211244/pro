@@ -48,7 +48,7 @@ cm=st.slider("กรุณาเลือกข้อมูล cm")
 
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/football_model.sav','rb'))
+   loaded_model = pickle.load(open('./data/foot_model.sav','rb'))
    input_data =  (size,cm)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
