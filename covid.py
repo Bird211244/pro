@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pickle
 
-st.image('./pro/covid.jpg')
+st.image('./pic/covid.jpg')
 
 html_8="""
 <div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
@@ -17,7 +17,7 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./pro/Covid.csv")
+dt=pd.read_csv("./data/Covid.csv")
 st.write(dt.head(10))
 
 data1 = dt['sex'].sum()
@@ -31,7 +31,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pickle
 
-st.image('./pro/covid.jpg')
+st.image('./pic/covid.jpg')
 
 html_8="""
 <div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
@@ -42,7 +42,7 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./pro/Covid.csv")
+dt=pd.read_csv("./data/Covid.csv")
 st.write(dt.head(10))
 
 data1 = dt['sex'].sum()
@@ -71,7 +71,7 @@ pn=st.slider("กรุณาเลือกข้อมูล pneumonia")
 
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./pro/covid_model.sav', 'rb'))
+   loaded_model = pickle.load(open('./data/covid_model.sav', 'rb'))
    input_data =  (sex,pn)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
@@ -80,9 +80,9 @@ if st.button("ทำนายผล"):
    prediction = loaded_model.predict(input_data_reshaped)
    st.write(prediction)
    if prediction == 'low':
-        st.image('./pro/virginica.jpg')
+        st.image('./pic/virginica.jpg')
    elif prediction == 'medium':
-        st.image('./pro/versicolor.jpg')
+        st.image('./pic/versicolor.jpg')
    else:
         st.image('./pic/setosa.jpg')
    st.button("ไม่แสดงข้อมูล")
@@ -110,7 +110,7 @@ sex=st.number_input("กรุณาเลือกข้อมูล pH")
 pn=st.slider("กรุณาเลือกข้อมูล pneumonia")
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/milk_model.sav', 'rb'))
+   loaded_model = pickle.load(open('./data/coivd_model.sav', 'rb'))
    input_data =  (sex,pn)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
@@ -119,9 +119,9 @@ if st.button("ทำนายผล"):
    prediction = loaded_model.predict(input_data_reshaped)
    st.write(prediction)
    if prediction == 'low':
-        st.image('./pro/virginica.jpg')
+        st.image('./pic/virginica.jpg')
    elif prediction == 'medium':
-        st.image('./pro/versicolor.jpg')
+        st.image('./pic/versicolor.jpg')
    else:
         st.image('./pic/setosa.jpg')
    st.button("ไม่แสดงข้อมูล")
