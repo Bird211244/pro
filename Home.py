@@ -20,14 +20,14 @@ st.markdown("")
 dt=pd.read_csv("./data/weather.csv")
 st.write(dt.head(10))
 
-data1 = dt['size'].sum()
-data2 = dt['cm'].sum()
+data1 = dt['temperature'].sum()
+data2 = dt['humidity'].sum()
+data3 = dt['windy'].sum()
 
 
 
-
-dx=[data1,data2]
-dx2=pd.DataFrame(dx, index=["d1", "d2"])
+dx=[data1,data2,data3]
+dx2=pd.DataFrame(dx, index=["d1", "d2", "d3"])
 
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
    st.area_chart(dx2)
