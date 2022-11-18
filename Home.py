@@ -10,7 +10,7 @@ st.image('./pic/welcome.jpg')
 
 html_8="""
 <div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
-<center><h5>การทำนายข้อมูลขนาดเท้า</h5></center>
+<center><h5>การทำนายสภาพอากาศ</h5></center>
 </div>
 """
 
@@ -44,7 +44,7 @@ st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
 temperature=st.number_input("กรุณาเลือกข้อมูล size")
-humidity=st.slider("กรุณาเลือกข้อมูล cm")
+humidity=st.number_input("กรุณาเลือกข้อมูล cm")
 windy=st.number_input("กรุณาเลือกข้อมูล windy")
 
 
