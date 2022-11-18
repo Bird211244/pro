@@ -45,7 +45,7 @@ st.markdown("")
 
 temperature=st.number_input("กรุณาเลือกข้อมูล size")
 humidity=st.slider("กรุณาเลือกข้อมูล cm")
-windy=st.number_input("กรุณาเลือกข้อมูล size")
+windy=st.number_input("กรุณาเลือกข้อมูล windy")
 
 
 
