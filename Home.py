@@ -17,7 +17,7 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/football.csv")
+dt=pd.read_csv("./data/weather.csv")
 st.write(dt.head(10))
 
 data1 = dt['size'].sum()
@@ -43,13 +43,15 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-size=st.number_input("กรุณาเลือกข้อมูล size")
-cm=st.slider("กรุณาเลือกข้อมูล cm")
+temperature=st.number_input("กรุณาเลือกข้อมูล size")
+humidity=st.slider("กรุณาเลือกข้อมูล cm")
+windy=st.number_input("กรุณาเลือกข้อมูล size")
+
 
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/ball_model.sav','rb'))
-   input_data =  (size,cm)
+   loaded_model = pickle.load(open('./data/weather_model.sav','rb'))
+   input_data =  (temperature,humidity,windy)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
    # reshape the array as we are predicting for one instance
